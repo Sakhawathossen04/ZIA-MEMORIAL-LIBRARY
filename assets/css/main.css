@@ -1,0 +1,331 @@
+/* ============================================================
+   ZIA MEMORIAL LIBRARY — main.css
+   Clone of obamalibrary.gov design system (NARA / Obama Library)
+   Colors/fonts হুবহু Obama site-এর মতো।
+   ============================================================ */
+
+/* ---------- Design tokens ---------- */
+:root {
+  --c-black: #000000;
+  --c-white: #ffffff;
+  --c-text: #454545;            /* Obama body text */
+  --c-grey-btn: #6c757d;        /* .btn-secondary */
+  --c-grey-border: #dee2e6;
+  --c-grey-light: #f8f9fa;
+  --c-overlay: rgba(0, 0, 0, .55);
+  --c-caption-bg: rgba(20, 20, 20, .85);
+  --font-sans: "Source Sans Pro", -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Merriweather", Georgia, serif;
+  --container: 1140px;
+}
+
+/* ---------- Reset / base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--c-text);
+  background: var(--c-white);
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+h1, h2, h3, h4 { line-height: 1.25; color: #212529; }
+p { margin: 0 0 1rem; }
+.container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 15px; }
+.d-flex { display: flex; }
+.text-center { text-align: center; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px;
+  clip: rect(0 0 0 0); overflow: hidden; white-space: nowrap;
+}
+.skip-link {
+  position: absolute; left: -999px; top: 0; z-index: 2000;
+  background: var(--c-black); color: var(--c-white); padding: 8px 16px;
+}
+.skip-link:focus { left: 0; }
+
+/* ============================================================
+   BRAND BANNER (NARA top bar clone)
+   ============================================================ */
+.brand-banner {
+  background: #fff;
+  border-bottom: 1px solid var(--c-grey-border);
+  font-size: 13px;
+}
+.brand-banner .banner-inner {
+  max-width: var(--container); margin: 0 auto; padding: 6px 15px;
+  display: flex; align-items: center; gap: 18px;
+}
+.brand-banner .banner-mark {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 700; letter-spacing: 2px; color: #1b1b1b;
+  text-decoration: none; text-transform: uppercase; font-size: 12px;
+}
+.brand-banner .banner-mark .dot {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--c-black); color: var(--c-white);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700;
+}
+.brand-banner .collapsible {
+  margin-left: auto; text-decoration: none; color: #1b1b1b;
+  border: 1px solid var(--c-grey-border); padding: 4px 12px; border-radius: 3px;
+}
+
+/* ============================================================
+   HEADER (black bar + logo + search + nav)
+   ============================================================ */
+.site-header { background: var(--c-black); color: var(--c-white); }
+.site-header .header-top {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 14px 0;
+}
+.site-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
+.site-logo .logo-text { line-height: 1.1; }
+.site-logo .logo-text .l1 { font-size: 22px; font-weight: 700; letter-spacing: 4px; }
+.site-logo .logo-text .l2 { font-size: 11px; letter-spacing: 3px; color: #cfcfcf; }
+.header-search { display: flex; gap: 6px; }
+.header-search input {
+  background: #fff; border: 1px solid #fff; color: #212529;
+  padding: 6px 10px; font-size: 14px; min-width: 220px; font-family: var(--font-sans);
+}
+.header-search .btn-search {
+  background: var(--c-grey-btn); color: #fff; border: 1px solid var(--c-grey-btn);
+  padding: 6px 14px; font-size: 14px; cursor: pointer; font-family: var(--font-sans);
+}
+.header-search .btn-search:hover { background: #5a6268; }
+
+.navbar { background: var(--c-black); }
+.navbar .nav-items { display: flex; align-items: center; justify-content: flex-end; }
+.navbar-toggler {
+  display: none; background: none; border: 1px solid #555; border-radius: 4px;
+  padding: 6px 10px; cursor: pointer;
+}
+.navbar-toggler span {
+  display: block; width: 20px; height: 2px; background: #fff; margin: 4px 0;
+}
+.navbar-nav { list-style: none; display: flex; margin: 0; padding: 0; flex-wrap: wrap; }
+.navbar-nav .nav-item .nav-link {
+  display: block; padding: 12px 16px; color: #fff; text-decoration: none;
+  text-transform: uppercase; font-size: 14px; font-weight: 600; letter-spacing: .5px;
+}
+.navbar-nav .nav-item .nav-link:hover,
+.navbar-nav .nav-item .nav-link.is-active { background: #1d1d1d; }
+
+@media (max-width: 991px) {
+  .navbar-toggler { display: block; }
+  .navbar .nav-items { justify-content: space-between; }
+  .navbar-collapse { display: none; width: 100%; }
+  .navbar-collapse.open { display: block; }
+  .navbar-nav { flex-direction: column; }
+  .header-search input { min-width: 0; width: 150px; }
+}
+
+/* ============================================================
+   HERO (home) — Obama full-viewport quote hero
+   ============================================================ */
+.hero {
+  position: relative; min-height: 100vh;
+  background: var(--c-black) center/cover no-repeat;
+  display: flex; align-items: center;
+}
+.hero-overlay { position: absolute; inset: 0; background: var(--c-overlay); }
+.hero .hero-inner { position: relative; z-index: 2; padding: 90px 0 140px; color: #fff; }
+.hero-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 3.2vw, 34px);
+  font-weight: 400; line-height: 1.6; max-width: 640px; margin: 0 0 34px;
+}
+.hero-signature { max-height: 90px; margin: 0 0 30px; filter: brightness(0) invert(1); }
+.hero-scroll-cue {
+  position: absolute; left: 24px; bottom: 28px; z-index: 2;
+  color: #fff; font-size: 34px; text-decoration: none; opacity: .85;
+  border: 1px solid rgba(255,255,255,.5); border-radius: 50%;
+  width: 58px; height: 58px; display: flex; align-items: center; justify-content: center;
+}
+.hero-caption {
+  position: absolute; right: 15px; bottom: 34px; z-index: 2;
+  max-width: 360px; background: var(--c-caption-bg); color: #eee;
+  font-size: 13px; line-height: 1.5; padding: 10px 14px;
+}
+
+/* ============================================================
+   PORTAL HEADER (sub-page banner) + title bar + breadcrumb
+   ============================================================ */
+.portal-header {
+  background: var(--c-black) center/cover no-repeat;
+  position: relative;
+}
+.portal-header .hero-overlay { position: absolute; }
+.title-bar { position: relative; background: rgba(0,0,0,.55); padding: 56px 0 20px; }
+.page-heading {
+  color: #fff; margin: 0; text-transform: uppercase;
+  font-size: clamp(24px, 3vw, 32px); font-weight: 700; letter-spacing: 1px;
+}
+.breadcrumb-wrap { border-bottom: 1px solid var(--c-grey-border); background: #fff; }
+.breadcrumb { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; padding: 0; font-size: 14px; }
+.breadcrumb .breadcrumb-item + .breadcrumb-item::before { content: "›"; margin-right: 6px; color: #888; }
+.breadcrumb a { color: #454545; text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+/* ============================================================
+   SUB-PAGE LAYOUT: sidebar + content
+   ============================================================ */
+.page-body { padding: 28px 0 64px; }
+.row-g0 { display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap; }
+.page-sidebar { flex: 0 0 220px; min-width: 200px; }
+.page-sidebar h3 { font-size: 16px; margin: 0 0 10px; }
+.page-sidebar h3 a { color: #212529; text-decoration: none; }
+.page-sidebar h3 a.is-active { border-bottom: 2px solid #000; }
+.sidebar-menu { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--c-grey-border); }
+.sidebar-menu li { border-bottom: 1px solid var(--c-grey-border); }
+.sidebar-menu a {
+  display: block; padding: 10px 4px; text-decoration: none;
+  color: #454545; font-size: 15px;
+}
+.sidebar-menu a:hover, .sidebar-menu a.is-active { color: #000; font-weight: 600; }
+.page-content { flex: 1 1 480px; min-width: 0; }
+
+@media (max-width: 991px) {
+  .page-sidebar { flex: 1 1 100%; }
+}
+
+/* ============================================================
+   PROFILE CARDS (The Obamas → The Zia Family)
+   ============================================================ */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+@media (max-width: 767px) { .two-col { grid-template-columns: 1fr; } }
+.profile-card {}
+.profile-card .profile-img { width: 100%; max-height: 420px; object-fit: cover; object-position: top; margin-bottom: 16px; }
+.profile-card h2 { font-size: 22px; margin: 0 0 10px; }
+.profile-card p { font-size: 16px; }
+
+/* ============================================================
+   BUTTONS — Obama site সেট
+   ============================================================ */
+.btn {
+  display: inline-block; padding: 9px 22px; border-radius: 4px;
+  font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+  text-decoration: none; cursor: pointer; border: 1px solid transparent;
+  font-family: var(--font-sans); transition: all .15s ease;
+}
+.btn-secondary { background: var(--c-grey-btn); color: #fff; }
+.btn-secondary:hover { background: #5a6268; }
+.btn-outline-dark { background: #fff; color: #212529; border-color: #212529; }
+.btn-outline-dark:hover { background: #212529; color: #fff; }
+.btn-hero { background: transparent; color: #fff; border-color: #fff; }
+.btn-hero:hover { background: #fff; color: #000; }
+
+/* ============================================================
+   TIMELINE
+   ============================================================ */
+.timeline-era-nav { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 26px; }
+.timeline-era {
+  border: 1px solid #212529; background: #fff; color: #212529;
+  padding: 7px 16px; font-size: 13px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: .5px; text-decoration: none; border-radius: 999px;
+}
+.timeline-era:hover, .timeline-era.is-active { background: #000; color: #fff; }
+
+.timeline-list { border-top: 2px solid #000; }
+.timeline-item { border-bottom: 1px solid var(--c-grey-border); padding: 0; }
+.timeline-item .tl-head {
+  width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+  display: flex; align-items: baseline; gap: 16px; padding: 16px 8px;
+  font-family: var(--font-sans);
+}
+.timeline-item .tl-head:hover { background: var(--c-grey-light); }
+.timeline-item .tl-date {
+  flex: 0 0 170px; font-weight: 700; text-transform: uppercase; font-size: 13px; color: #000;
+}
+.timeline-item .tl-title { font-size: 17px; font-weight: 600; color: #212529; }
+.timeline-modal { display: none !important; }
+.timeline-modal.open { display: flex !important; }
+
+/* modal (Obama #detail-modal-* clone) */
+.modal-backdrop {
+  display: none;
+  position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 1500;
+  align-items: flex-start; justify-content: center; padding: 40px 16px; overflow-y: auto;
+}
+.modal-backdrop.open { display: flex; }
+.modal-xl {
+  background: #fff; max-width: 980px; width: 100%; border-radius: 6px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.35);
+}
+.modal-header { display: flex; justify-content: flex-end; padding: 12px 16px; }
+.btn-close {
+  background: none; border: none; font-size: 26px; line-height: 1; cursor: pointer; color: #333;
+}
+.modal-body { padding: 8px 40px 48px; }
+.parent-date { font-size: 13px; color: #666; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
+.parent-title { font-size: 26px; margin: 0 0 14px; }
+.parent-body { max-width: 720px; }
+.media-gallery { margin-top: 26px; }
+.media-gallery h2 { font-size: 20px; border-bottom: 2px solid #000; padding-bottom: 8px; }
+.media-field { margin-top: 22px; }
+.media-wrapper iframe { width: 100%; aspect-ratio: 16/9; border: 0; }
+.media-wrapper img { width: 100%; }
+.caption { font-size: 13.5px; color: #555; margin-top: 8px; }
+.caption a { color: #0b5ed7; }
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 28px; }
+.gallery-card {}
+.gallery-card .gallery-thumb { width: 100%; height: 220px; object-fit: cover; }
+.gallery-card h2 { font-size: 20px; margin: 14px 0 12px; }
+.photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+.photo-grid figure { margin: 0; }
+.photo-grid img { width: 100%; height: 200px; object-fit: cover; cursor: zoom-in; }
+.photo-grid figcaption { font-size: 13px; color: #555; margin-top: 6px; }
+
+/* lightbox */
+.lightbox {
+  position: fixed; inset: 0; background: rgba(0,0,0,.92); z-index: 1600;
+  display: none; align-items: center; justify-content: center; flex-direction: column; padding: 30px;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-height: 78vh; max-width: 92vw; }
+.lightbox .lb-caption { color: #ddd; font-size: 13.5px; margin-top: 14px; max-width: 760px; text-align: center; }
+.lightbox .btn-close { position: absolute; top: 18px; right: 24px; color: #fff; }
+
+/* ============================================================
+   NEWS / teaser lists
+   ============================================================ */
+.news-item { display: flex; gap: 22px; padding: 24px 0; border-bottom: 1px solid var(--c-grey-border); }
+.news-item .news-date { font-size: 13px; font-weight: 700; text-transform: uppercase; color: #000; margin-bottom: 6px; }
+.news-item h3 { margin: 0 0 8px; font-size: 20px; }
+.news-item h3 a { color: #212529; text-decoration: none; }
+.news-item h3 a:hover { text-decoration: underline; }
+.news-item .news-thumb { flex: 0 0 220px; height: 140px; object-fit: cover; }
+@media (max-width: 640px) { .news-item { flex-direction: column; } .news-item .news-thumb { width: 100%; flex: none; } }
+
+/* ============================================================
+   HOME blocks
+   ============================================================ */
+.home-section { padding: 56px 0; }
+.home-section.alt { background: var(--c-grey-light); }
+.home-section h2 { font-size: 26px; margin: 0 0 14px; }
+.section-lead { max-width: 760px; }
+
+/* footer */
+.site-footer { background: var(--c-black); color: #fff; padding: 44px 0 30px; margin-top: 0; }
+.site-footer a { color: #fff; text-decoration: none; }
+.site-footer .footer-nav { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 26px; margin: 0 0 18px; padding: 0; }
+.site-footer .footer-nav .nav-link { font-size: 13px; font-weight: 600; letter-spacing: .5px; text-transform: uppercase; padding: 4px 0; }
+.site-footer .footer-nav .nav-link:hover { text-decoration: underline; }
+.copyright-block { font-size: 13.5px; color: #cfcfcf; max-width: 720px; margin-bottom: 22px; }
+.menu--social h3 { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #bbb; margin: 0 0 10px; }
+.social-list { list-style: none; display: flex; gap: 18px; margin: 0 0 24px; padding: 0; }
+.social-list a { font-size: 14px; font-weight: 600; }
+.archives-logo { display: inline-block; margin-top: 8px; opacity: .9; }
+.archives-logo:hover { opacity: 1; }
+
+/* search page */
+.search-results { list-style: none; padding: 0; }
+.search-results li { padding: 14px 0; border-bottom: 1px solid var(--c-grey-border); }

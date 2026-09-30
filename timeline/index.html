@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>টাইমলাইন | জিয়া স্মৃতি গ্রন্থাগার</title>
+  <meta name="description" content="শহীদ প্রেসিডেন্ট জিয়াউর রহমানের জীবন ও জিয়া পরিবারের যাত্রার ইন্টারঅ্যাকটিভ টাইমলাইন (১৯৩৬–২০২৬)।">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="brand-banner">
+    <div class="banner-inner">
+      <a class="banner-mark" href="../index.html"><span class="dot">জ</span> BANGLADESH HISTORY ARCHIVE</a>
+      <a class="collapsible" href="#footer">Explore our Websites</a>
+    </div>
+  </div>
+  <header id="header" class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <a href="../index.html" class="site-logo" aria-label="Home">
+          <div class="logo-text"><div class="l1">শহীদ জিয়া</div><div class="l2">MEMORIAL LIBRARY</div></div>
+        </a>
+        <form class="header-search" action="../search/index.html" role="search">
+          <input type="text" name="q" aria-label="Search" placeholder="Search">
+          <button class="btn-search" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="container d-flex nav-items">
+        <button class="navbar-toggler" aria-label="Open menu"><span></span><span></span><span></span></button>
+        <div class="navbar-collapse">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="../zia-family/index.html">The Zia Family</a></li>
+            <li class="nav-item"><a class="nav-link is-active" href="../timeline/index.html">Timeline</a></li>
+            <li class="nav-item"><a class="nav-link" href="../photos-videos/index.html">Photos &amp; Videos</a></li>
+            <li class="nav-item"><a class="nav-link" href="../artifacts/index.html">Artifacts</a></li>
+            <li class="nav-item"><a class="nav-link" href="../research/index.html">Research</a></li>
+            <li class="nav-item"><a class="nav-link" href="../about-us/index.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="../news/index.html">News</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div id="portal-header" class="portal-header" style="background-image:url('../assets/images/gallery/zia-netherlands-visit-1979.jpg')">
+    <div id="title-bar" class="title-bar"><div class="container"><h1 class="page-heading">টাইমলাইন</h1></div></div>
+  </div>
+  <div class="breadcrumb-wrap"><div class="container">
+    <nav aria-label="breadcrumb"><h2 class="visually-hidden">Breadcrumb</h2>
+      <ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Home</a></li><li class="breadcrumb-item">টাইমলাইন</li></ol>
+    </nav>
+  </div></div>
+
+  <main id="main-content" class="container page-body">
+    <h2 class="visually-hidden">On This Page</h2>
+    <div class="timeline-era-nav" id="era-nav">
+      <a class="timeline-era is-active" data-era="all" href="#">সব যুগ</a>
+      <a class="timeline-era" data-era="pre" href="#">পূর্ব-মুক্তিযুদ্ধ (১৯৩৬–৭০)</a>
+      <a class="timeline-era" data-era="war" href="#">মুক্তিযুদ্ধ (১৯৭১)</a>
+      <a class="timeline-era" data-era="rise" href="#">ক্ষমতায় আরোহণ (১৯৭৫–৭৭)</a>
+      <a class="timeline-era" data-era="pres" href="#">রাষ্ট্রপতিত্ব (১৯৭৭–৮১)</a>
+      <a class="timeline-era" data-era="legacy" href="#">উত্তরাধিকার (১৯৮১–২০২৬)</a>
+    </div>
+    <div class="timeline-list" id="timeline-list"></div>
+  </main>
+
+  <footer id="footer" class="site-footer">
+    <div class="container">
+      <ul class="footer-nav">
+        <li class="nav-item"><a class="nav-link" href="../about-us/contact.html">যোগাযোগ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../about-us/index.html">আমাদের সম্পর্কে</a></li>
+        <li class="nav-item"><a class="nav-link" href="../news/index.html">সংবাদ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../search/index.html">সার্চ</a></li>
+      </ul>
+      <div class="copyright-block">শহীদ প্রেসিডেন্ট জিয়াউর রহমান স্মৃতি গ্রন্থাগার একটি অলাভজনক ডিজিটাল আর্কাইভ প্রকল্প।</div>
+      <nav class="menu--social" aria-label="Social">
+        <h3>আমাদের সঙ্গে যুক্ত হোন</h3>
+        <ul class="social-list">
+          <li><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i> Facebook</a></li>
+          <li><a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i> YouTube</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../assets/js/timeline-data.js"></script>
+  <script>
+    (function () {
+      var list = document.getElementById("timeline-list");
+      var eras = { pre: "পূর্ব-মুক্তিযুদ্ধ", war: "মুক্তিযুদ্ধ", rise: "ক্ষমতায় আরোহণ", pres: "রাষ্ট্রপতিত্ব", legacy: "উত্তরাধিকার" };
+      (window.ZIA_TIMELINE || []).forEach(function (ev) {
+        var item = document.createElement("div");
+        item.className = "timeline-item";
+        item.setAttribute("data-era", ev.era);
+        var btn = document.createElement("button");
+        btn.className = "tl-head";
+        btn.setAttribute("data-modal-open", "modal-" + ev.id);
+        btn.innerHTML = '<span class="tl-date">' + ev.date + '</span><span class="tl-title">' + ev.title + '</span>';
+        item.appendChild(btn);
+        list.appendChild(item);
+
+        var modal = document.createElement("div");
+        modal.className = "modal-backdrop timeline-modal";
+        modal.id = "modal-" + ev.id;
+        modal.setAttribute("role", "dialog");
+        modal.setAttribute("aria-modal", "true");
+        var mediaHTML = "";
+        (ev.media || []).forEach(function (m) {
+          if (m.type === "video") {
+            mediaHTML += '<div class="media-field"><div class="media-wrapper"><iframe src="' + m.src + '" title="' + ev.title + '" allowfullscreen></iframe></div><div class="caption">' + (m.caption || "") + '</div></div>';
+          } else {
+            mediaHTML += '<div class="media-field"><div class="media-wrapper"><img src="' + m.src + '" alt="' + ev.title + '"></div><div class="caption">' + (m.caption || "") + '</div></div>';
+          }
+        });
+        modal.innerHTML =
+          '<div class="modal-xl"><div class="modal-header"><button class="btn-close" data-modal-close aria-label="Close">✕</button></div>' +
+          '<div class="modal-body"><div class="parent-date">টাইমলাইন — ' + eras[ev.era] + '</div>' +
+          '<h2 class="parent-title">' + ev.title + '</h2>' +
+          '<div class="parent-body"><p>' + ev.body + '</p></div>' +
+          (mediaHTML ? '<div class="media-gallery"><h2>মিডিয়া গ্যালারি</h2>' + mediaHTML + '</div>' : '') +
+          '</div></div>';
+        document.body.appendChild(modal);
+      });
+      document.querySelectorAll("#era-nav .timeline-era").forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelectorAll("#era-nav .timeline-era").forEach(function (x) { x.classList.remove("is-active"); });
+          a.classList.add("is-active");
+          var era = a.getAttribute("data-era");
+          document.querySelectorAll("#timeline-list .timeline-item").forEach(function (item) {
+            item.style.display = (era === "all" || item.getAttribute("data-era") === era) ? "" : "none";
+          });
+        });
+      });
+    })();
+  </script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
