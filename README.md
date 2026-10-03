@@ -1,7 +1,6 @@
 # শহীদ প্রেসিডেন্ট জিয়াউর রহমান স্মৃতি গ্রন্থাগার — **Zia Memorial Library**
 
-> Reference site: [https://www.obamalibrary.gov](https://www.obamalibrary.gov) (Barack Obama Presidential Library, NARA)
-> আমাদের লক্ষ্য: এই সাইটের **structure, design, UX pattern ১:১ clone** করে মেজর জিয়া (শহীদ প্রেসিডেন্ট জিয়াউর রহমান), বেগম খালেদা জিয়া ও তারেক রহমান কেন্দ্রিক একটি সম্পূর্ণ নতুন ওয়েবসাইট তৈরি করা।
+> Site : https://ziamemoriallibrary.vercel.app/
 
 ---
 
