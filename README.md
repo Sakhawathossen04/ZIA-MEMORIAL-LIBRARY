@@ -347,4 +347,4 @@ assets/images/
     ├── ziaur-rahman-signature.svg   (PD — hero signature)
     └── tarique-rahman-signature.svg (PD)
 ```
-> সব ছবি Wikimedia Commons থেকে যাচাইকৃত লাইসেন্সে (CC0 / CC BY / CC BY-SA / OGL) ডাউনলোড করা — ক্রেডিট লাইন: `docs/IMAGE-LICENSES.md`।
+
