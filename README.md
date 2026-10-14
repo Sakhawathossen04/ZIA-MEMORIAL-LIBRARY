@@ -20,71 +20,10 @@
 | Layout | Page = `.container > .row.g-0` → বামে `.page-sidebar-first-container .col-lg-2` (sidebar menu) + ডানে content |
 | Hero | Full-viewport dark photo, বামে উদ্ধৃতি + signature image + scroll-down cue, ডানে-নিচে caption box |
 
-### Obama সাইটের পেজ ইনভেন্টরি (সম্পূর্ণ)
 
-```
-/                                  → Home (hero quote → timeline → Obamas → galleries → FAQ → Support → Instagram)
-/obamas                            → The Obamas (2-column profile cards + contact info)
-/obamas/president-barack-obama     → জীবনী: Personal / Political Career / Presidential Administration (ছবি সহ)
-/obamas/first-lady-michelle-obama  → প্রথম ফার্স্ট লেডির জীবনী
-/obamas/first-familys-residence    → হোয়াইট হাউস (বাসভবন)
-/timeline                          → Interactive Timeline (~86+ events, era grouping, modal media gallery)
-/photos-videos                     → গ্যালারি হাব (5টি কার্ড: President / First Lady / Family / Videos / Pets)
-/galleries/{slug}                  → প্রতিটি গ্যালারি (photo grid + captions)
-/artifacts                         → Artifact কালেকশন (35,000+ জিনিস, Digital Artifact Collection)
-/digital-research-room             → Research hub (FOIA, finding aids, archived websites, AV records, search)
-/about-us                          → About (+ 5টি sub-page)
-/news                              → News list (date + title + excerpt + READ MORE)
-/search                            → Full-text search (Views exposed form)
-```
-
-### Main Navigation (exact order)
-1. **The Obamas** → `/obamas`
-2. **Timeline** → `/timeline`
-3. **Photos & Videos** → `/photos-videos`
-4. **Artifacts** → `/artifacts`
-5. **Research** → `/digital-research-room`
-6. **About Us** → `/about-us`
-7. **News** → `/news`
-
-### Footer (exact structure)
-- **Menu (uppercase)**: ACCESSIBILITY · FOIA · PRIVACY POLICY · ARCHIVES.GOV · CONTACT · ABOUT US · NEWS
-- **Copyright block**: এক লাইনের বর্ণনা ("...part of the presidential libraries system administered by...")
-- **CONNECT WITH US**: Instagram, YouTube (নতুন ট্যাব icon `bi bi-box-arrow-up-right` সহ)
-- **Bottom logo**: National Archives logo (link সহ)
 
 ---
 
-## 2. আমাদের সাইট — Page Map (Obama → Zia)
-
-| # | Obama Library | আমাদের সাইট (slug) | কনটেন্ট |
-|---|---|---|---|
-| 1 | Home `/` | `/` | Hero: Zia-র ২৭ মার্চ ঘোষণার উদ্ধৃতি → Timeline preview → The Zia Family → Galleries → FAQ → Support → Social feed |
-| 2 | The Obamas | `/zia-family` | ২-কলাম কার্ড: **President Ziaur Rahman**, **Begum Khaleda Zia**, **Tarique Rahman**, **The Zia Family & Legacy** + যোগাযোগ/ফাউন্ডেশন তথ্য |
-| 3 | President Barack Obama | `/zia-family/president-ziaur-rahman` | Personal / Military & Liberation War / Presidency & Reforms / Legacy |
-| 4 | First Lady Michelle | `/zia-family/begum-khaleda-zia` | প্রথম লেডি (১৯৭৭–৮১) → BNP chairperson → ৩ বার PM (১৯৯১–৯৬, ১৯৯৬, ২০০১–০৬) |
-| 5 | First Family's Residence | `/zia-family/zia-family-legacy` | পরিবার: তারেক রহমান, আরাফাত রহমান কোকো, জুবাইদা রহমান, জাইমা রহমান + গণভবন/চন্দ্রিমা উদ্যান |
-| 6 | Timeline | `/timeline` | Zia-র জন্ম (১৯৩৬) থেকে তারেক রহমানের শপথ (২০২৬) পর্যন্ত ~৬০+ event, era group সহ |
-| 7 | Photos & Videos | `/photos-videos` | গ্যালারি কার্ড: Ziaur Rahman / Khaleda Zia / Tarique Rahman / Zia Family / Videos |
-| 8 | Artifacts | `/artifacts` | স্মৃতিচিহ্ন: সামরিক পোশাক, বিরউত্তম পদক, চিঠি, উপহার, গণভবনের জিনিসপত্র |
-| 9 | Research | `/research` | সংগৃহীত দলিল, ভাষণ ট্রান্সক্রিপ্ট, সংবাদ আর্কাইভ, ডকুমেন্ট রিকোয়েস্ট |
-| 10 | About Us | `/about-us` | লাইব্রেরি সম্পর্কে, FAQ, সাপোর্ট, যোগাযোগ |
-| 11 | News | `/news` | সংবাদ/প্রোগ্রাম আপডেট |
-| 12 | NARA banner | Top banner | "Bangladesh History Archive"-ধরনের ঐচ্ছিক টপ বার |
-
----
-
-## 3. Tech Stack (আমাদের)
-
-**Phase 1–5: Static site** (কোনো build tool ছাড়াই চলবে, সহজে হোস্ট):
-- Semantic **HTML5** — প্রতি পেজে আলাদা `.html`
-- একটাই **`assets/css/main.css`** (Bootstrap-অনুপ্রাণিত নিজস্ব ক্লাস — নিচে সম্পূর্ণ লিস্ট)
-- Vanilla **JS** (`assets/js/main.js`): mobile menu, sticky nav, timeline modal, gallery lightbox, slick-style slider (CSS scroll-snap দিয়ে)
-- Timeline: **TimelineJS (Knight Lab) embed** অথবা নিজস্ব CSS timeline (Phase 3-এ সিদ্ধান্ত)
-- Fonts: Google Fonts — `Source Sans Pro` + `Merriweather`
-- Icons: **Bootstrap Icons** CDN
-
-**Phase 7 (ঐচ্ছিক):** Next.js/Astro + headless CMS-এ migration (রোডম্যাপে বিস্তারিত)।
 
 ### প্রস্তাবিত ফাইল স্ট্রাকচার
 ```
